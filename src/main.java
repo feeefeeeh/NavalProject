@@ -1,14 +1,14 @@
 
-<<<<<<< Updated upstream
-public class main {
+import java.util.Scanner;
 
-=======
+
 public class main 
 {
    static Scanner sc = new Scanner(System.in);
    
    
-    public static void main (String [] args){
+    public static void main (String [] args)
+    {
         int entrer=0;
         while(true){
         if(entrer!=0){
@@ -16,6 +16,7 @@ public class main
             try{System.in.read();}
             catch(Exception e)
             {}
+         
             
         }
         entrer=1;
@@ -30,9 +31,27 @@ public class main
         switch(choix){
             case 1 :
                 System.out.println("Vous jouez contre l'ordinateur");
-                System.out.println("Coming soon"); 
+                
+                //Création de la grille
                 Test Test = new Test(15,15)  ;
                 Test.afficher();
+                
+                //Placer bateau
+                /*System.out.println("Entrer le numéro de la ligne : ");
+                Scanner sc1 = new Scanner (System.in);
+                int l = sc1.nextInt();
+                System.out.println("Entrer le numéro de la colonne : ");
+                Scanner sc2 = new Scanner (System.in);
+                int c = sc2.nextInt();*/
+                int l = (int)(Math.random() * 15);
+                int c = (int)(Math.random() * 15);
+                int p = (int)(Math.random() * 2);
+                System.out.println(l);
+                System.out.println(c);
+                System.out.println(p);
+                Test.destroyer(l,c,p);
+                Test.afficher();
+                
                 break;
             case 2 : 
                 System.out.println("En travaux...");
@@ -47,6 +66,7 @@ public class main
         }
         }
     }
+    
     private static void Aide(){
         System.out.println("Vous disposez de 5 bateaux de longueurs différentes à positionner sur un plateau de 10 sur 10.");
         System.out.println("Tour à tour positionnez les bateaux qui vous sont proposés de la manière suivante:");
@@ -57,5 +77,5 @@ public class main
         System.out.println("A l'inverse, si l'adversaire touche un de vos bateau, le message 'vous avez été touché' s'affichera et s'il parvient à couler votre bateau le message 'votre bateau a coulé' s'affichera");
         System.out.println("Le but est de couler tous les bateaux de l'adversaire");
     }
->>>>>>> Stashed changes
+
 }
