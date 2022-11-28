@@ -30,10 +30,11 @@ public class Test {
 		}
 		System.out.println();
 	}
-public void sousmarin(int l,int c, int p) {
+	
+public void sousmarin() {
 		
-		l=l-1;
-		c=c-1;
+		int l = (int)(Math.random() * 15);
+		int c = (int)(Math.random() * 15);
 		
 		if(l<0 || c<0 || l>ligne || c>col) {
 			System.out.print("Erreur A");
@@ -47,11 +48,15 @@ public void sousmarin(int l,int c, int p) {
 			}
 	}
 	
-	public void destroyer(int l,int c, int p) {
+	public void destroyer() {
 		
-		l=l-1;
-		c=c-1;
-		
+		int l = (int)(Math.random() * 15);
+        int c = (int)(Math.random() * 12);
+        int p = (int)(Math.random() * 2);
+        
+        int l1 = (int)(Math.random() * 12);
+        int c1 = (int)(Math.random() * 15);
+			
 		if(l<0 || c<0 || l>ligne || c>col) {
 			System.out.print("Erreur A");
 			return;
@@ -59,7 +64,7 @@ public void sousmarin(int l,int c, int p) {
 		if(p==0) {
 			if(grille[l][c] == '.') {
 				for(int b=0;b<3;b++) {
-					grille[l][c+b] = '1';
+					grille[l+b][c] = '1';
 				}
 			}
 			else {
@@ -67,9 +72,9 @@ public void sousmarin(int l,int c, int p) {
 			}
 		}
 		if(p==1) {
-			if(grille[l][c] == '.') {
+			if(grille[l1][c1] == '.') {
 				for(int a=0;a<3;a++) {
-					grille[l][c+a] = '1';
+					grille[l1][c1+a] = '1';
 				}
 			}
 			else {
@@ -77,10 +82,15 @@ public void sousmarin(int l,int c, int p) {
 			}
 		}
 	}
-public void croiseur(int l,int c, int p) {
+	
+public void croiseur() {
 		
-		l=l-1;
-		c=c-1;
+		int l = (int)(Math.random() * 15);
+		int c = (int)(Math.random() * 10);
+		int p = (int)(Math.random() * 2);
+		
+		int l1 = (int)(Math.random() * 15);
+		int c1 = (int)(Math.random() * 10);
 		
 		if(l<0 || c<0 || l>ligne || c>col) {
 			System.out.print("Erreur A");
@@ -107,13 +117,17 @@ public void croiseur(int l,int c, int p) {
 			}
 		}
 	}
-public void cuirasse(int l,int c, int p) {
+	public void cuirasse() {
 	
-	l=l-1;
-	c=c-1;
+	int l = (int)(Math.random() * 8);
+	int c = (int)(Math.random() * 15);
+	int p = (int)(Math.random() * 2);
+	
+	int l1 = (int)(Math.random() * 15);
+	int c1 = (int)(Math.random() * 8);
 	
 	if(l<0 || c<0 || l>ligne || c>col) {
-		System.out.print("Erreur A");
+		System.out.print("Erreur en dehors de la zone");
 		return;
 	}
 	if(p==0) {
@@ -128,9 +142,9 @@ public void cuirasse(int l,int c, int p) {
 		}
 	}
 	if(p==1) {
-		if(grille[l][c] == '.') {
+		if(grille[l1][c1] == '.') {
 			for(int a=0;a<7;a++) {
-				grille[l][c+a] = '3';
+				grille[l1][c1+a] = '3';
 			}
 		}
 		else {

@@ -34,32 +34,18 @@ public class main
                 
                 //Création de la grille
                 Test Test = new Test(15,15)  ;
-                Test.afficher();
                 
-                //Placer bateau
-                /*System.out.println("Entrer le numéro de la ligne : ");
-                Scanner sc1 = new Scanner (System.in);
-                int l = sc1.nextInt();
-                System.out.println("Entrer le numéro de la colonne : ");
-                Scanner sc2 = new Scanner (System.in);
-                int c = sc2.nextInt();*/
                 int l = (int)(Math.random() * 15);
                 int c = (int)(Math.random() * 15);
                 int p = (int)(Math.random() * 2);
-                int l1 = (int)(Math.random() * 15);
-                int c1 = (int)(Math.random() * 15);
-                int p1 = (int)(Math.random() * 2);
-                int l2 = (int)(Math.random() * 15);
-                int c2 = (int)(Math.random() * 15);
-                int p2 = (int)(Math.random() * 2);
-                int l3 = (int)(Math.random() * 15);
-                int c3 = (int)(Math.random() * 15);
-                int p3 = (int)(Math.random() * 2);
 
-                Test.sousmarin(l,c,p);
-                Test.destroyer(l1,c1,p1);
-                Test.croiseur(l2,c2,p2);
-                Test.cuirasse(l3,c3,p3);
+                Test.cuirasse();
+                Test.destroyer();
+                Test.destroyer();
+                Test.destroyer();
+                Test.sousmarin();
+                Test.croiseur();
+                Test.croiseur();
                 Test.afficher();
                 
                 break;
