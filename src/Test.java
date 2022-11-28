@@ -30,6 +30,22 @@ public class Test {
 		}
 		System.out.println();
 	}
+public void sousmarin(int l,int c, int p) {
+		
+		l=l-1;
+		c=c-1;
+		
+		if(l<0 || c<0 || l>ligne || c>col) {
+			System.out.print("Erreur A");
+			return;
+		}
+			if(grille[l][c] == '.') {
+				grille[l][c] = '0';
+			}
+			else {
+				System.out.print("Erreur, emplacement déjà pris");
+			}
+	}
 	
 	public void destroyer(int l,int c, int p) {
 		
@@ -42,9 +58,9 @@ public class Test {
 		}
 		if(p==0) {
 			if(grille[l][c] == '.') {
-				grille[l][c] = '1';
-				grille[l+1][c] = '1';
-				grille[l][c+1] = '1';
+				for(int b=0;b<3;b++) {
+					grille[l][c+b] = '1';
+				}
 			}
 			else {
 				System.out.print("Erreur, emplacement déjà pris");
@@ -52,68 +68,76 @@ public class Test {
 		}
 		if(p==1) {
 			if(grille[l][c] == '.') {
-				grille[l][c] = '1';
-				grille[l][c+1] = '1';
-				grille[l][c+1] = '1';
+				for(int a=0;a<3;a++) {
+					grille[l][c+a] = '1';
+				}
 			}
 			else {
 				System.out.print("Erreur, emplacement déjà pris");
 			}
 		}
 	}
-	public void sousmarin(int l,int c, int p) {
+public void croiseur(int l,int c, int p) {
 		
 		l=l-1;
 		c=c-1;
-		p=p-1;
 		
 		if(l<0 || c<0 || l>ligne || c>col) {
-			System.out.print("Erreur");
+			System.out.print("Erreur A");
 			return;
 		}
-		if(grille[l][c] == '.') {
-			grille[l][c] = 'O';
+		if(p==0) {
+			if(grille[l][c] == '.') {
+				for(int b=0;b<5;b++) {
+					grille[l+b][c] = '2';
+				}
+			}
+			else {
+				System.out.print("Erreur, emplacement déjà pris");
+			}
 		}
-		else {
-			System.out.print("Erreur, emplacement déjà pris");
+		if(p==1) {
+			if(grille[l][c] == '.') {
+				for(int a=0;a<5;a++) {
+					grille[l][c+a] = '2';
+				}
+			}
+			else {
+				System.out.print("Erreur, emplacement déjà pris");
+			}
 		}
 	}
-	public void croiseur(int l,int c, int p) {
+public void cuirasse(int l,int c, int p) {
 	
 	l=l-1;
 	c=c-1;
-	p=p-1;
 	
 	if(l<0 || c<0 || l>ligne || c>col) {
-		System.out.print("Erreur");
+		System.out.print("Erreur A");
 		return;
 	}
-	if(grille[l][c] == '.') {
-		grille[l][c] = 'O';
-		grille[l+1][c] = 'O';
-	}
-	else {
-		System.out.print("Erreur, emplacement déjà pris");
-	}
-}
-	public void cuirasse(int l,int c, int p) {
-		
-		l=l-1;
-		c=c-1;
-		p=p-1;
-		
-		if(l<0 || c<0 || l>ligne || c>col) {
-			System.out.print("Erreur");
-			return;
-		}
+	if(p==0) {
 		if(grille[l][c] == '.') {
-			grille[l][c] = 'O';
-			grille[l+1][c] = 'O';
+			for(int b=0;b<7;b++) {
+				grille[l+b][c] = '3';
+			}
+			
 		}
 		else {
 			System.out.print("Erreur, emplacement déjà pris");
 		}
 	}
+	if(p==1) {
+		if(grille[l][c] == '.') {
+			for(int a=0;a<7;a++) {
+				grille[l][c+a] = '3';
+			}
+		}
+		else {
+			System.out.print("Erreur, emplacement déjà pris");
+		}
+	}
+}
 
 	
 }

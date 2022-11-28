@@ -46,10 +46,20 @@ public class main
                 int l = (int)(Math.random() * 15);
                 int c = (int)(Math.random() * 15);
                 int p = (int)(Math.random() * 2);
-                System.out.println(l);
-                System.out.println(c);
-                System.out.println(p);
-                Test.destroyer(l,c,p);
+                int l1 = (int)(Math.random() * 15);
+                int c1 = (int)(Math.random() * 15);
+                int p1 = (int)(Math.random() * 2);
+                int l2 = (int)(Math.random() * 15);
+                int c2 = (int)(Math.random() * 15);
+                int p2 = (int)(Math.random() * 2);
+                int l3 = (int)(Math.random() * 15);
+                int c3 = (int)(Math.random() * 15);
+                int p3 = (int)(Math.random() * 2);
+
+                Test.sousmarin(l,c,p);
+                Test.destroyer(l1,c1,p1);
+                Test.croiseur(l2,c2,p2);
+                Test.cuirasse(l3,c3,p3);
                 Test.afficher();
                 
                 break;
