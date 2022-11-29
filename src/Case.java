@@ -13,6 +13,7 @@ public class Case {
 	}
 	public Bateau getBat() {
 		return bat;
+		
 	}
 
 	public void setBat(Bateau bat) {
