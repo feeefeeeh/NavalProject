@@ -1,4 +1,4 @@
 
-public class EtatCase {
-	INVALIDE, INC, BATEAU, EAU, MANQUE, TOUCHE, COULE;
-}
+public enum EtatCase {
+	INVALIDE, INC, BATEAU, EAU, MANQUE, TOUCHE, COULE
+};
